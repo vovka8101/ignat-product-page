@@ -1,30 +1,39 @@
-# React + TypeScript + Vite
+# Ignat Product Page
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Посилання на сайт: https://frontend-mentor23.github.io/social-link-profile/
 
-Currently, two official plugins are available:
+## Інструкція по запуску
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+1. Відкрити термінал у VS Code та клонувати репозиторій.
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```shell
+git clone https://github.com/vovka8101/ignat-product-page.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+2. Відкрити папку з проектом.
+
+```shell
+cd .\ignat-product-page\
+```
+
+3. Інсталювати необхідні модулі для запуску проекта.
+
+```shell
+npm install
+```
+
+4. Запустити проект.
+
+```shell
+npm run dev
+```
+
+## Коротка інформація про проект
+
+Проект було реалізовано за допомогою наступних бібліотек та технологій:
+
+- React
+- TypeScript
+- SCSS
+- BEM
+- Swiper
