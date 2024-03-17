@@ -1,0 +1,74 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/colors" as col;
+@use "../utils/" as u;
+
+.suggestions {
+
+  &__title {
+    margin-bottom: var.$suggestions-title-mb;
+  }
+  
+  &__items {
+    @include u.grid-container;
+
+    .item {
+      grid-column: span 4;
+
+      &__img-container {
+        position: relative;
+        margin-bottom: var.$suggestions-img-container-mb;
+
+        .like-btn {
+          position: absolute;
+          top: var.$suggestions-like-btn-pos-y;
+          right: var.$suggestions-like-btn-pos-x;
+          width: var.$suggestions-like-btn-size;
+          height: var.$suggestions-like-btn-size;
+          background-color: white;
+          border-radius: 50%;
+        }
+      }
+
+      &__img {
+        height: var.$suggestions-img-h;
+        object-fit: cover;
+      }
+
+      &__title {
+        font-size: var.$suggestions-title-fz;
+        line-height: var.$suggestions-title-lh;
+        font-weight: 500;
+        margin-bottom: var.$suggestions-title-mb;
+      }
+
+      &__text {
+        line-height: var.$suggestions-text-lh;
+        color: col.$black-600;
+      }
+
+    }
+  }
+
+  &__show-more {
+    position: relative;
+    margin-top: var.$suggestions-show-more-mt;
+    text-align: center;
+    line-height: var.$suggestions-show-more-lh;
+    text-transform: uppercase;
+    color: col.$black-600;
+
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      bottom: var.$suggestions-show-more-icon-pos-y;
+      transform: translateX(-50%);
+      width: var.$suggestions-show-more-icon-size;
+      height: var.$suggestions-show-more-icon-size;
+      background-image: url(../assets/images/icons/chevrons-down.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      cursor: pointer;
+    }
+  }
+}

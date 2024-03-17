@@ -1,0 +1,7 @@
+@use "../abstracts/variables" as var;
+
+.main {
+  flex: 1;
+  padding-top: var.$main-top-p;
+  padding-bottom: var.$main-bottom-p;
+}

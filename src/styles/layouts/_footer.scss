@@ -1,0 +1,78 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/colors" as col;
+@use "../utils/" as u;
+
+.footer {
+  padding-top: var.$footer-p-top;
+  border-top: 1px solid col.$black-200;
+
+
+  .footer-top {
+    @include u.grid-container;
+    max-width: var.$content-max-width;
+    margin-inline: auto;
+    padding-inline: var.$content-padding;
+    margin-bottom: var.$footer-top-mb;
+
+    &__contacts {
+      grid-column: span 4;
+    }
+
+    &__help {
+      grid-column: span 3;
+    }
+
+    &__personal-account {
+      grid-column: span 3;
+    }
+
+    &__about {
+      grid-column: span 2;
+    }
+
+    &__title {
+      font-size: var.$footer-top-title-fz;
+      line-height: var.$footer-top-title-lh;
+      color: col.$black-800;
+      margin-bottom: var.$footer-top-title-mb;
+    }
+
+    .list {
+      display: flex;
+      flex-direction: column;
+      gap: var.$footer-top-list-gap;
+
+      &__link {
+        color: col.$black-600;
+      }
+    }
+  }
+
+  .footer-bottom {
+    height: var.$footer-bottom-h;
+    background-color: col.$black-800;
+
+    .content {
+      height: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav {
+      display: flex;
+      gap: var.$footer-bottom-nav-gap;
+
+      &__link {
+        line-height: var.$footer-bottom-nav-link-lh;
+        text-transform: uppercase;
+        color: white;
+      }
+    }
+
+    .copyright {
+      font-size: var.$footer-copyright-fz;
+      color: white;
+    }
+  }
+}

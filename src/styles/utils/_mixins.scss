@@ -1,0 +1,11 @@
+@use "../abstracts/variables" as var;
+
+@mixin set-menu-position($position) {
+  transform: $position;
+}
+
+@mixin grid-container {
+  display: grid;
+  grid-template-columns: repeat(#{var.$grid-cols}, #{var.$grid-w});
+  gap: var.$grid-gap;
+}

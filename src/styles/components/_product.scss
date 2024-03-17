@@ -1,0 +1,130 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/colors" as col;
+@use "../utils/" as u;
+
+.product {
+  @include u.grid-container;
+  margin-bottom: var.$product-mb;
+
+  .product-view {
+    grid-column: span 5;
+  }
+
+  .product-info {
+    grid-column: span 7;
+
+    &__title {
+      text-transform: uppercase;
+    }
+
+    &__name {
+      color: col.$black-600;
+      margin-bottom: var.$product-name-mb;
+    }
+
+    &__price {
+      margin-bottom: var.$product-price-mb;
+    }
+
+    .product-text {
+      text-transform: uppercase;
+      margin-bottom: var.$product-size-text-mb;
+      color: col.$black-800;
+    }
+
+    .product-input {
+      display: none;
+    }
+
+    .product-label {
+      width: var.$product-label-size;
+      height: var.$product-label-size;
+      border: 1px solid transparent;
+      cursor: pointer;
+
+      &:has(input:checked) {
+        border: 1px solid col.$black-800;
+      }
+
+      &:hover {
+        border: 1px solid col.$black-800;
+      }
+    }
+
+    .product-input__container {
+      display: flex;
+      gap: var.$product-size-gap;
+    }
+
+    .product-size {
+      margin-bottom: var.$product-size-mb;
+
+      &__label {
+        background-color: col.$product-size-label-bg;
+        border-radius: var.$product-size-border-radius;
+      }
+    }
+
+    .product-color {
+      margin-bottom: var.$product-color-mb;
+
+      &__label {
+        position: relative;
+        border-radius: 50%;
+
+        &:has(input[value="white"]) {
+          background-color: white;
+        }
+        &:has(input[value="grey"]) {
+          background-color: col.$black-400;
+        }
+        &:has(input[value="black"]) {
+          background-color: col.$black-800;
+        }
+
+        &:has(input:checked)::after {
+          content: "";
+          position: absolute;
+          min-width: var.$product-label-size;
+          min-height: var.$selected-product-arrow-min-h;
+          bottom: var.$selected-product-arrow-indent;
+          background-image: url(../assets/images/icons/chevron-up.svg);
+          background-repeat: no-repeat;
+          background-size: cover;
+        }
+      }
+    }
+
+    &__desc-title {
+      font-size: var.$product-desc-title-fz;
+      font-weight: 500;
+      color: col.$black-800;
+      text-transform: uppercase;
+      margin-bottom: var.$product-desc-title-mb;
+    }
+
+    &__article {
+      margin-bottom: var.$product-article-mb;
+    }
+
+    &__desc-text {
+      line-height: var.$product-desc-text-fz;
+      color: col.$black-400;
+
+      &::first-line {
+        color: col.$black-600;
+      }
+    }
+
+    &__buttons {
+      padding-top: var.$product-buttons-p-top;
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px solid col.$black-200;
+
+      .btn {
+        flex-basis: 42%;
+      }
+    }
+  }
+}

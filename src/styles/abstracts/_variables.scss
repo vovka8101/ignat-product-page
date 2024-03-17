@@ -1,0 +1,126 @@
+// global
+$content-max-width: 75rem;
+$content-padding: 0.9375rem;
+$duration: 0.2s;
+$icon-size: 1.5rem;
+$main-title-fz: 1.5rem;
+
+$grid-cols: 12;
+$grid-w: 4.375rem;
+$grid-gap: 1.875rem;
+
+$btn-p-y: 1.25rem;
+$btn-border-radius: 0.9375rem;
+
+// header
+$header-top-fz: 0.75rem;
+
+$search-input-min-w: 17.625rem;
+$search-input-p: 0.5625rem;
+$search-input-p-left: 2.5rem;
+$search-input-b-radius: 0.9375rem;
+
+$search-input-field-h: 2.5rem;
+$search-input-icon-size: $search-input-field-h - ($search-input-p * 2);
+
+// menu
+$menu-hidden: translateX(calc(-100% - #{$content-padding}));
+$menu-displayed: translateX(-#{$content-padding});
+$menu-min-w: 13.75rem;
+$menu-w: 40vw;
+$menu-btn-w: 1.5rem;
+$menu-btn-h: 1.5rem;
+$menu-p-x: 1.5rem;
+$menu-p-y: 2rem;
+$menu-gap: 1.875rem;
+
+// main
+$main-top-p: 1.25rem;
+$main-bottom-p: 5rem;
+
+// location
+$location-gap: 0.25rem;
+$location-mb: 1.25rem;
+$location-fz: 0.875em;
+
+// product
+$product-label-size: 1.875rem;
+$product-mb: 5rem;
+
+$product-size-gap: 0.625rem;
+$product-size-mb: 1.25rem;
+$product-size-border-radius: 0.3125rem;
+$product-size-text-mb: 0.625rem;
+
+$product-title-fz: 1.625rem;
+$product-title-lh: 2.5rem;
+$product-title-fw: 500;
+
+$product-name-mb: 1.25rem;
+
+$product-price-fz: 1.625rem;
+$product-price-fw: 700;
+$product-price-lh: 2.5rem;
+$product-price-mb: 1.25rem;
+$product-color-mb: 2.5rem;
+
+$selected-product-arrow-min-h: 1.5rem;
+$selected-product-arrow-indent: -1.5rem;
+
+$product-desc-title-fz: 1.25rem;
+$product-desc-title-mb: 1.5rem;
+$product-article-mb: 1rem;
+$product-desc-text-fz: 1.5rem;
+$product-buttons-p-top: 1.25rem;
+
+// reviews
+$reviews-mb: 5rem;
+$reviews-nav-gap: 0.375rem;
+$reviews-nav-mb: 0.9375rem;
+
+$swiper-nav-top: 0.75rem;
+$swiper-nav-gap: 1.875rem;
+$swiper-nav-btns: 1.25rem;
+$swiper-arrow-img-w: 1.5625rem;
+$swiper-card-h: 15.625rem;
+$swiper-card-p-y: 1.875rem;
+$swiper-card-p-x: 2.25rem;
+$swiper-card-border-radius: 0.9375rem;
+$swiper-card-top-gap: 1.25rem;
+$swiper-card-top-mb: 1.25rem;
+
+$swiper-card-stars-gap: 0.25rem;
+$swiper-card-star-size: 0.5rem;
+$swiper-card-name-fz: 1rem;
+$swiper-card-name-lh: 1.875rem;
+$swiper-card-text-lh: 1.5rem;
+
+// suggestions
+$suggestions-title-mb: 1.25rem;
+$suggestions-like-btn-size: 2.1875rem;
+$suggestions-like-btn-pos-y: 0.625rem;
+$suggestions-like-btn-pos-x: 0.625rem;
+$suggestions-img-h: 27rem;
+$suggestions-img-container-mb: 0.5em;
+$suggestions-title-fz: 1.25em;
+$suggestions-title-lh: 1.625em;
+$suggestions-title-mb: 0.5em;
+$suggestions-text-lh: 1.5em;
+$suggestions-show-more-mt: 3.625rem;
+$suggestions-show-more-lh: 1.5rem;
+$suggestions-show-more-icon-size: 1.5rem;
+$suggestions-show-more-icon-pos-y: -1.375rem;
+
+// footer
+$footer-p-top: 2.875rem;
+
+$footer-top-title-fz: 1em;
+$footer-top-title-lh: 1.5em;
+$footer-top-title-mb: 1.5em;
+$footer-top-list-gap: 1.5em;
+$footer-top-mb: 3rem;
+
+$footer-bottom-h: 5.75rem;
+$footer-bottom-nav-gap: 1.875em;
+$footer-bottom-nav-link-lh: 1.5em;
+$footer-copyright-fz: 0.75em;

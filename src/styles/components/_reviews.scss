@@ -1,0 +1,130 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/colors" as col;
+
+.reviews {
+  position: relative;
+  margin-bottom: var.$reviews-mb;
+
+  &__navigation {
+    display: flex;
+    align-items: center;
+    gap: var.$reviews-nav-gap;
+    margin-bottom: var.$reviews-nav-mb;
+
+    .count {
+      font-size: 15;
+      color: col.$black-400;
+    }
+  }
+
+  &__content {
+
+    .swiper-navigation {
+      position: absolute;
+      top: var.$swiper-nav-top;
+      right: 0;
+      display: flex;
+      align-items: flex-start;
+      gap: var.$swiper-nav-gap;
+
+      .page-number {
+        color: col.$black-800;
+      }
+
+      .swiper-nav-btns {
+        display: flex;
+        gap: var.$swiper-nav-btns;
+
+        .slide-btn {
+          
+          &:disabled {
+            opacity: 0.5;
+          }
+
+          .arrow-img {
+            width: var.$swiper-arrow-img-w;
+          }
+        }
+      }
+    }
+
+    .reviews-swiper {
+
+      .slide-plus {
+        position: relative;
+        cursor: pointer;
+
+        .plus {
+          position: absolute;
+          width: 5rem;
+          height: 3px;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          background-color: black;
+
+          &::after {
+            content: "";
+            width: 3px;
+            height: 5rem;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: black;
+          }
+        }
+      }
+
+      .card {
+        height: var.$swiper-card-h;
+        padding: var.$swiper-card-p-y var.$swiper-card-p-x;
+        border: 1px solid black;
+        border-radius: var.$swiper-card-border-radius;
+        box-sizing: border-box;
+
+        &__top {
+          display: flex;
+          align-items: center;
+          gap: var.$swiper-card-top-gap;
+          margin-bottom: var.$swiper-card-top-mb;
+
+          .author {
+
+            .stars {
+              display: flex;
+              gap: var.$swiper-card-stars-gap;
+
+              &__star {
+                width: var.$swiper-card-star-size;
+                height: var.$swiper-card-star-size;
+                background-image: url(../assets/images/star.png);
+                background-position: center;
+                background-repeat: no-repeat;
+              }
+
+              &--1 :nth-child(-n+1),
+              &--2 :nth-child(-n+2),
+              &--3 :nth-child(-n+3),
+              &--4 :nth-child(-n+4),
+              &--5 :nth-child(-n+5) {
+                background-image: url(../assets/images/star-active.png);
+              }
+            }
+
+            &__name {
+              font-size: var.$swiper-card-name-fz;
+              line-height: var.$swiper-card-name-lh;
+              font-weight: 500;
+            }
+          }
+        }
+
+        &__text {
+          line-height: var.$swiper-card-text-lh;
+          color: col.$black-600;
+        }
+      }
+    }
+  }
+}

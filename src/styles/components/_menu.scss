@@ -1,0 +1,110 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/colors" as col;
+@use "../utils/" as u;
+
+.navigation {
+
+  @include u.tablet {
+    order: -1;
+  }
+
+  .menu-btn {
+    display: none;
+
+    @include u.tablet {
+      display: block;
+      width: var.$menu-btn-w;
+      height: var.$menu-btn-h;
+      background-image: url(../assets/images/icons/burger-menu.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      transition: transform var.$duration;
+
+      &:hover {
+        transform: scale(1.1);
+      }
+    }
+  }
+
+  .menu {
+    display: flex;
+    gap: var.$menu-gap;
+    transition-duration: var.$duration;
+
+    @include u.tablet {
+      min-width: var.$menu-min-w;
+      width: var.$menu-w;
+      padding: var.$menu-p-y var.$menu-p-x;
+      flex-direction: column;
+      align-items: flex-start;
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      background-color: col.$black-800;
+      color: white;
+      transform: var.$menu-hidden;
+      z-index: 10;
+
+      &:target {
+        transform: var.$menu-displayed;
+
+        .close-menu-btn {
+          display: block;
+          width: var.$menu-btn-w;
+          height: var.$menu-btn-h;
+          background-image: url(../assets/images/icons/close.svg);
+          background-repeat: no-repeat;
+          background-size: cover;
+          cursor: pointer;
+          transition: transform var.$duration;
+    
+          &:hover {
+            transform: scale(1.1);
+          }
+        }
+      }
+    }
+
+    .active {
+      border-bottom: 1px solid col.$black-800;
+      pointer-events: none;
+
+      @include u.tablet {
+        border-bottom: 1px solid white;
+      }
+    }
+
+    .close-menu-btn {
+      display: none;
+    }
+
+    &__link {
+      padding: 1.5625rem 0;
+      text-transform: uppercase;
+      border-bottom: 1px solid transparent;
+
+      @include u.tablet {
+        padding: 0.625rem 0;
+      }
+
+      &:hover {
+        border-bottom: 1px solid col.$black-800;
+
+        @include u.tablet {
+          border-bottom: 1px solid white;
+        }
+      }
+    }
+  }
+}
+
+.navigation:has(#menu:target) + .close-menu-modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
+  background-color: rgba(0,0,0, 0.5);
+  cursor: default;
+}

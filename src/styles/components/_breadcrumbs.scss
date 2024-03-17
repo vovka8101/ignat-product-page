@@ -1,0 +1,28 @@
+@use "../abstracts/colors" as col;
+@use "../abstracts/variables" as var;
+
+.location {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var.$location-gap;
+  margin-bottom: var.$location-mb;
+
+  &__item {
+    font-size: var.$location-fz;
+    text-transform: uppercase;
+    color: col.$black-400;
+
+    &:hover {
+      color: black;
+    }
+
+    &:not(:last-child)::after {
+      content: " - ";
+    }
+
+    &:last-child {
+      color: col.$black-600;
+      pointer-events: none;
+    }
+  }
+}

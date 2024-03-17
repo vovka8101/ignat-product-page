@@ -1,0 +1,47 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/colors" as col;
+@use "../utils/" as u;
+
+.search {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+
+  @include u.tablet-sm {
+    flex-basis: 100%;
+  }
+
+  &__field {
+    position: relative;
+
+    @include u.tablet-sm {
+      flex-grow: 1;
+    }
+  }
+
+  &__input {
+    min-width: var.$search-input-min-w;
+    height: var.$search-input-field-h;
+    padding: var.$search-input-p;
+    padding-left: var.$search-input-p-left;
+    background-color: col.$black-100;
+    border-radius: var.$search-input-b-radius;
+    border: 1px solid black;
+
+    &:focus {
+      outline: 1px solid black;
+    }
+
+    @include u.tablet-sm {
+      min-width: auto;
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    left: var.$search-input-p;
+    top: var.$search-input-p;
+    width: var.$search-input-icon-size;
+    height: var.$search-input-icon-size;
+  }
+}

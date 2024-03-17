@@ -1,0 +1,81 @@
+@use "../abstracts/variables" as var;
+@use "../abstracts/colors" as col;
+@use "../abstracts/fonts" as f;
+
+body {
+  font-family: f.$main-font;
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: col.$page-bg;
+}
+
+.content {
+  max-width: var.$content-max-width;
+  margin-inline: auto;
+  padding-inline: var.$content-padding;
+}
+
+.main-title {
+  font-family: f.$seccond-font;
+  font-size: var.$main-title-fz;
+  font-weight: 500;
+  letter-spacing: -2px;
+  text-transform: uppercase;
+}
+
+.seccond-title {
+  font-size: var.$product-title-fz;
+  line-height: var.$product-title-lh;
+  font-weight: var.$product-title-fw;
+  color: col.$black-800;
+}
+
+.btn {
+  width: 100%;
+  padding: var.$btn-p-y 0;
+  text-transform: uppercase;
+  border-radius: var.$btn-border-radius;
+  border: 1px solid black;
+  transition: color var.$duration, background-color var.$duration;
+}
+
+.main-btn {
+  color: white;
+  background-color: black;
+
+  &:hover {
+    color: black;
+    background-color: white;
+  }
+}
+
+.seccond-btn {
+  background-color: white;
+
+  &:hover {
+    color: white;
+    background-color: black;
+  }
+}
+
+.icon {
+  min-width: var.$icon-size;
+  min-height: var.$icon-size;
+  transition: transform var.$duration;
+  cursor: pointer;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}
+
+.product-price {
+  font-size: var.$product-price-fz;
+  font-weight: var.$product-price-fw;
+  line-height: var.$product-price-lh;
+  color: col.$product-price;
+}
