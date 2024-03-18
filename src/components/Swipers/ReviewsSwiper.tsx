@@ -10,6 +10,7 @@ import arrowRight from "../../assets/images/icons/arrow-right.png"
 
 import 'swiper/scss'
 import 'swiper/scss/navigation';
+import { useSlidesAmount } from '../../hooks/useSlidesAmount';
 
 type ReviewsSwiperProps = {
   reviews: TReviews[]
@@ -18,6 +19,7 @@ type ReviewsSwiperProps = {
 export const ReviewsSwiper = ({ reviews }: ReviewsSwiperProps) => {
   const swiperRef = useRef<SwiperRef>(null)
   const [currentPage, setCurrentPage] = useState(1)
+  const slidesAmount = useSlidesAmount()
 
   const handleSlideChange = (swiper: TSwiper) => {
     setCurrentPage(swiper.snapIndex + 1);
@@ -28,7 +30,7 @@ export const ReviewsSwiper = ({ reviews }: ReviewsSwiperProps) => {
   }
 
   const getTotalPages = () => {
-    return Math.ceil((reviews.length + 1) / 4).toString().padStart(2, '0')
+    return Math.ceil((reviews.length + 1) / slidesAmount).toString().padStart(2, '0')
   }
 
   return (
@@ -48,7 +50,7 @@ export const ReviewsSwiper = ({ reviews }: ReviewsSwiperProps) => {
           <button
             className="next-slide-btn slide-btn"
             onClick={() => swiperRef.current?.swiper.slideNext()}
-            disabled={currentPage === Math.ceil((reviews.length + 1) / 4)}
+            disabled={currentPage === Math.ceil((reviews.length + 1) / slidesAmount)}
           >
             <img src={arrowRight} alt="Arrow Right" className="arrow-img" />
           </button>
@@ -59,8 +61,8 @@ export const ReviewsSwiper = ({ reviews }: ReviewsSwiperProps) => {
         modules={[Navigation]}
         spaceBetween={30}
         navigation={{ prevEl: "prev-slide-btn", nextEl: "next-slide-btn" }}
-        slidesPerView={4}
-        slidesPerGroup={4}
+        slidesPerView={slidesAmount}
+        slidesPerGroup={slidesAmount}
         onSlideChange={(swiper) => handleSlideChange(swiper)}
         className="reviews-swiper"
       >

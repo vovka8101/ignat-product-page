@@ -3,15 +3,43 @@
 @use "../utils/" as u;
 
 .product {
-  @include u.grid-container;
+  @include u.grid-12;
   margin-bottom: var.$product-mb;
+
+  @include u.desktop-sm {
+    @include u.grid-8;
+  }
+
+  @include u.tablet {
+    @include u.grid-4;
+  }
+
+  @include u.tablet-sm {
+    @include u.grid-2;
+  }
 
   .product-view {
     grid-column: span 5;
+
+    @include u.desktop-sm {
+      grid-column: span 4;
+    }
+
+    @include u.tablet-sm {
+      grid-column: span 2;
+    }
   }
 
   .product-info {
     grid-column: span 7;
+
+    @include u.desktop-sm {
+      grid-column: span 4;
+    }
+
+    @include u.tablet-sm {
+      grid-column: span 2;
+    }
 
     &__title {
       text-transform: uppercase;
@@ -119,11 +147,21 @@
     &__buttons {
       padding-top: var.$product-buttons-p-top;
       display: flex;
+      flex-wrap: wrap;
       justify-content: space-between;
       border-top: 1px solid col.$black-200;
 
+      @include u.tablet-sm {
+        justify-content: flex-start;
+        gap: 1rem;
+      }
+
       .btn {
         flex-basis: 42%;
+
+        @include u.tablet-sm {
+          flex-basis: 100%;
+        }
       }
     }
   }

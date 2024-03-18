@@ -7,43 +7,41 @@ export const Suggestions = () => {
   return (
     <section className="suggestions">
       <h2 className="suggestions__title seccond-title">Ще може сподобатись</h2>
-      <div className="suggestions__items">
-        <div className="item">
-          <div className="item__img-container">
-            <button className="like-btn">
-              <img src={heartIcon} alt="Heart" className="like-btn__img" />
-            </button>
-            <img src={img1} alt="Product" className="item__img" />
-          </div>
-          <h4 className="item__title">Термобілизна для бодібілдерів</h4>
-          <p className="item__gender item__text">Для чоловіків</p>
-          <p className="item__colors item__text">2 кольори</p>
-          <p className="item__price product-price">4000 грн.</p>
+      <div className="suggestions__item">
+        <div className="item__img-container">
+          <button className="like-btn">
+            <img src={heartIcon} alt="Heart" className="like-btn__img" />
+          </button>
+          <img src={img1} alt="Product" className="item__img" />
         </div>
-        <div className="item">
-          <div className="item__img-container">
-            <button className="like-btn">
-              <img src={heartIcon} alt="Heart" className="like-btn__img" />
-            </button>
-            <img src={img2} alt="Product" className="item__img" />
-          </div>
-          <h4 className="item__title">Термобілизна для бодібілдерів</h4>
-          <p className="item__gender item__text">Для чоловіків</p>
-          <p className="item__colors item__text">2 кольори</p>
-          <p className="item__price product-price">4000 грн.</p>
+        <h4 className="item__title">Термобілизна для бодібілдерів</h4>
+        <p className="item__gender item__text">Для чоловіків</p>
+        <p className="item__colors item__text">2 кольори</p>
+        <p className="item__price product-price">4000 грн.</p>
+      </div>
+      <div className="suggestions__item">
+        <div className="item__img-container">
+          <button className="like-btn">
+            <img src={heartIcon} alt="Heart" className="like-btn__img" />
+          </button>
+          <img src={img2} alt="Product" className="item__img" />
         </div>
-        <div className="item">
-          <div className="item__img-container">
-            <button className="like-btn">
-              <img src={heartIcon} alt="Heart" className="like-btn__img" />
-            </button>
-            <img src={img3} alt="Product" className="item__img" />
-          </div>
-          <h4 className="item__title">Термобілизна для бодібілдерів</h4>
-          <p className="item__gender item__text">Для чоловіків</p>
-          <p className="item__colors item__text">2 кольори</p>
-          <p className="item__price product-price">4000 грн.</p>
+        <h4 className="item__title">Термобілизна для бодібілдерів</h4>
+        <p className="item__gender item__text">Для чоловіків</p>
+        <p className="item__colors item__text">2 кольори</p>
+        <p className="item__price product-price">4000 грн.</p>
+      </div>
+      <div className="suggestions__item">
+        <div className="item__img-container">
+          <button className="like-btn">
+            <img src={heartIcon} alt="Heart" className="like-btn__img" />
+          </button>
+          <img src={img3} alt="Product" className="item__img" />
         </div>
+        <h4 className="item__title">Термобілизна для бодібілдерів</h4>
+        <p className="item__gender item__text">Для чоловіків</p>
+        <p className="item__colors item__text">2 кольори</p>
+        <p className="item__price product-price">4000 грн.</p>
       </div>
       <p className="suggestions__show-more">
         <a href="#">дивитись більше</a>

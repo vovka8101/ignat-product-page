@@ -1,15 +1,32 @@
 @use "../abstracts/variables" as var;
 @use "../abstracts/colors" as col;
+@use "../utils/" as u;
 
 .reviews {
-  position: relative;
+
+  @include u.grid-12;
+  row-gap: 1rem;
   margin-bottom: var.$reviews-mb;
 
+  @include u.desktop-sm {
+    @include u.grid-8;
+    row-gap: 1rem;
+  }
+
+  @include u.tablet {
+    @include u.grid-4;
+  }
+
+  @include u.tablet-sm {
+    @include u.grid-2;
+    row-gap: 2rem;
+  }
+
   &__navigation {
+    grid-column: 1 / -1;
     display: flex;
     align-items: center;
     gap: var.$reviews-nav-gap;
-    margin-bottom: var.$reviews-nav-mb;
 
     .count {
       font-size: 15;
@@ -18,6 +35,20 @@
   }
 
   &__content {
+    grid-column: span 12;
+    position: relative;
+
+    @include u.desktop-sm {
+      grid-column: span 8;
+    }
+
+    @include u.tablet {
+      grid-column: span 4;
+    }
+
+    @include u.tablet-sm {
+      grid-column: span 2;
+    }
 
     .swiper-navigation {
       position: absolute;
@@ -26,6 +57,11 @@
       display: flex;
       align-items: flex-start;
       gap: var.$swiper-nav-gap;
+
+      @include u.tablet-sm {
+        left: 0;
+        top: -1.875rem;
+      }
 
       .page-number {
         color: col.$black-800;
@@ -49,6 +85,7 @@
     }
 
     .reviews-swiper {
+      padding-right: 1px;
 
       .slide-plus {
         position: relative;
@@ -85,8 +122,10 @@
 
         &__top {
           display: flex;
+          flex-wrap: wrap;
+          justify-content: space-between;
           align-items: center;
-          gap: var.$swiper-card-top-gap;
+          gap: 0.625em;
           margin-bottom: var.$swiper-card-top-mb;
 
           .author {
@@ -94,6 +133,7 @@
             .stars {
               display: flex;
               gap: var.$swiper-card-stars-gap;
+              margin-bottom: 0.5em;
 
               &__star {
                 width: var.$swiper-card-star-size;
@@ -114,7 +154,6 @@
 
             &__name {
               font-size: var.$swiper-card-name-fz;
-              line-height: var.$swiper-card-name-lh;
               font-weight: 500;
             }
           }

@@ -6,28 +6,22 @@
   padding-top: var.$footer-p-top;
   border-top: 1px solid col.$black-200;
 
-
   .footer-top {
-    @include u.grid-container;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 1.5em;
     max-width: var.$content-max-width;
     margin-inline: auto;
     padding-inline: var.$content-padding;
     margin-bottom: var.$footer-top-mb;
 
-    &__contacts {
-      grid-column: span 4;
-    }
+    &__item {
+      min-width: 10rem;
 
-    &__help {
-      grid-column: span 3;
-    }
-
-    &__personal-account {
-      grid-column: span 3;
-    }
-
-    &__about {
-      grid-column: span 2;
+      @include u.tablet-sm {
+        flex-basis: 40%;
+      }
     }
 
     &__title {
@@ -52,21 +46,37 @@
     height: var.$footer-bottom-h;
     background-color: col.$black-800;
 
+    @include u.tablet-sm {
+      height: auto;
+      padding: 1em 0;
+    }
+
     .content {
       height: 100%;
       display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
       justify-content: space-between;
       align-items: center;
     }
 
     .nav {
       display: flex;
+      flex-wrap: wrap;
       gap: var.$footer-bottom-nav-gap;
+
+      @include u.tablet-sm {
+        gap: var.$footer-bottom-nav-gap-mob;
+      }
 
       &__link {
         line-height: var.$footer-bottom-nav-link-lh;
         text-transform: uppercase;
         color: white;
+
+        @include u.tablet {
+          font-size: 0.875em;
+        }
       }
     }
 

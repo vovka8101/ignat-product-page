@@ -1,3 +1,5 @@
+@use "../utils/" as u;
+
 .product-main-swiper {
   margin-bottom: 4px;
 
@@ -6,6 +8,10 @@
     .main-img-container {
       height: 550px;
       background-color: black;
+
+      @include u.tablet-sm {
+        height: 360px;
+      }
     }
   
     .main-img {
@@ -21,8 +27,6 @@
   .product-swiper-slide-thumb {
     
     .thumb-img-container {
-      width: 154px;
-      height: 154px;
       background-color: black;
 
       .thumb-img {

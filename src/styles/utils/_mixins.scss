@@ -4,8 +4,23 @@
   transform: $position;
 }
 
-@mixin grid-container {
+@mixin grid-12 {
   display: grid;
-  grid-template-columns: repeat(#{var.$grid-cols}, #{var.$grid-w});
+  grid-template-columns: repeat(12, #{var.$grid-w});
   gap: var.$grid-gap;
+}
+
+@mixin grid-8 {
+  grid-template-columns: repeat(8, #{var.$grid-w-desktop-sm});
+  gap: var.$grid-gap-tablet;
+  justify-content: center;
+}
+
+@mixin grid-4 {
+  grid-template-columns: repeat(4, #{var.$grid-w-tablet});
+  gap: var.$grid-gap-mobile;
+}
+
+@mixin grid-2 {
+  grid-template-columns: repeat(2, #{var.$grid-w-mobile});
 }

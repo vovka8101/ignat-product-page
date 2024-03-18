@@ -1,9 +1,8 @@
 export const Footer = () => {
   return (
     <footer className="footer">
-
       <div className="footer-top">
-        <div className="footer-top__contacts">
+        <div className="footer-top__contacts footer-top__item">
           <h6 className="footer-top__title">Контакт - центр</h6>
           <ul className="footer-top__list list">
             <li className="list__item">
@@ -17,7 +16,7 @@ export const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="footer-top__help">
+        <div className="footer-top__help footer-top__item">
           <h6 className="footer-top__title">Покупцям</h6>
           <ul className="footer-top__list list">
             <li className="list__item">
@@ -31,7 +30,7 @@ export const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="footer-top__personal-account">
+        <div className="footer-top__personal-account footer-top__item">
           <h6 className="footer-top__title">Особистий кабінет</h6>
           <ul className="footer-top__list list">
             <li className="list__item">
@@ -48,7 +47,7 @@ export const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="footer-top__about">
+        <div className="footer-top__about footer-top__item">
           <h6 className="footer-top__title">Про компанію</h6>
           <ul className="footer-top__list list">
             <li className="list__item">

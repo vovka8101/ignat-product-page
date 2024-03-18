@@ -3,16 +3,44 @@
 @use "../utils/" as u;
 
 .suggestions {
+  @include u.grid-12;
+
+  @include u.desktop-sm {
+    @include u.grid-8;
+  }
+
+  @include u.tablet {
+    @include u.grid-4;
+  }
+
+  @include u.tablet-sm {
+    @include u.grid-2;
+  }
 
   &__title {
-    margin-bottom: var.$suggestions-title-mb;
+    grid-column: 1 / -1;
   }
-  
-  &__items {
-    @include u.grid-container;
+
+  &__item {
+    grid-column: span 4;
+
+    @include u.desktop-sm {
+      grid-column: span 3;
+
+      &:nth-child(odd) {
+        grid-column: 6 / span 3;
+      }
+    }
+
+    @include u.tablet {
+      grid-column: span 2;
+
+      &:nth-child(odd) {
+        grid-column: span 2;
+      }
+    }
 
     .item {
-      grid-column: span 4;
 
       &__img-container {
         position: relative;
@@ -30,8 +58,13 @@
       }
 
       &__img {
+        width: 100%;
         height: var.$suggestions-img-h;
         object-fit: cover;
+
+        @include u.tablet {
+          height: var.$suggestions-img-h-mob;
+        }
       }
 
       &__title {
@@ -50,8 +83,8 @@
   }
 
   &__show-more {
+    grid-column: 1 / -1;
     position: relative;
-    margin-top: var.$suggestions-show-more-mt;
     text-align: center;
     line-height: var.$suggestions-show-more-lh;
     text-transform: uppercase;

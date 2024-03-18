@@ -1,6 +1,7 @@
 @use "../abstracts/variables" as var;
 @use "../abstracts/colors" as col;
 @use "../abstracts/fonts" as f;
+@use "../utils/" as u;
 
 body {
   font-family: f.$main-font;
@@ -32,6 +33,11 @@ body {
   line-height: var.$product-title-lh;
   font-weight: var.$product-title-fw;
   color: col.$black-800;
+
+  @include u.tablet {
+    font-size: 1.375rem;
+    line-height: 2rem;
+  }
 }
 
 .btn {
@@ -41,6 +47,10 @@ body {
   border-radius: var.$btn-border-radius;
   border: 1px solid black;
   transition: color var.$duration, background-color var.$duration;
+
+  @include u.tablet-sm {
+    padding: 1rem 0;
+  }
 }
 
 .main-btn {
