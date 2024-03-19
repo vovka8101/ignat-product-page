@@ -1,6 +1,6 @@
 # Ignat Product Page
 
-Посилання на сайт: https://frontend-mentor23.github.io/social-link-profile/
+Посилання на сайт: https://vovka8101.github.io/ignat-product-page/
 
 ## Інструкція по запуску
 
